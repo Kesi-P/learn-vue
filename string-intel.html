@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <title>Kuu Ang Sus</title>
+  </head>
+  <body>
+
+<div class="container">
+
+
 <!-- call view model -->
 <div class="app">
-  <!-- v-bind for changing the value ex:data="30" -->
- <a v-bind:href="url">{{url}}</a>
- <!-- another way to do v-bind -->
- <h1 :data="dynamicId">{{ dynamicId }}</h1>
+  <form>
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <input v-model='message' class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
+    <p>{{ message }}</p>
+  </div>
+  </form>
 </div>
-
+</div>
 <!-- development version, includes helpful console warnings -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
@@ -18,8 +31,10 @@
      el:'.app',
      <!-- opject properties -->
      data:{
-         url:'https://google.com',
-         dynamicId:30
+         message:'Hello'
      }
    })
 </script>
+
+้  </body>
+</html>
