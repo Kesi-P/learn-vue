@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- call view model -->
+<div class="app">
+  <h1>{{ message }}</h1>
+  <h1>{{ number + 10 }}</h1>
+  <h1>{{ isActive ? 'isActive':'notActive'}}</h1>
+  <h1>{{ message.split('').reverse('').join('') }}</h1>
+</div>
+
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<!--binding js with html-->
+<script>
+   let vm = new Vue({
+     <!-- element -->
+     el:'.app',
+     <!-- opject properties -->
+     data:{
+         message:'Hello',
+         number: 10,
+         isActive: true
+     }
+   })
+</script>
