@@ -1,40 +1,83 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <title>Kuu Ang Sus</title>
-  </head>
-  <body>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
 
-<div class="container">
+
+    <div class="container">
 
 
-<!-- call view model -->
-<div class="app">
-  <form>
-    <div class="form-group">
-    <label for="exampleFormControlTextarea1">Example textarea</label>
-    <input v-model='message' class="form-control" id="exampleFormControlTextarea1" rows="3"></input>
-    <p>{{ message }}</p>
-  </div>
-  </form>
-</div>
-</div>
-<!-- development version, includes helpful console warnings -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+       <div id="app">
 
-<!--binding js with html-->
-<script>
-   let vm = new Vue({
-     <!-- element -->
-     el:'.app',
-     <!-- opject properties -->
-     data:{
-         message:'Hello'
-     }
-   })
+
+           <form action="">
+
+               <div class="col-sm-6">
+                 <!-- options value -->
+                    <input v-model="options" type="text" class="form-control">
+               </div>
+
+
+
+               <fieldset class="form-group">
+                   <legend>Radio buttons</legend>
+                   <div class="form-check">
+                       <label class="form-check-label">
+                           <input v-model="options"  type="checkbox" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option-1" checked>
+                           Option one is this and that&mdash;be sure to include why it's great
+                       </label>
+                   </div>
+                   <div class="form-check">
+                       <label class="form-check-label">
+                           <input v-model="options"   type="checkbox" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option-2">
+                           Option two can be something else and selecting it will deselect option one
+                       </label>
+                   </div>
+                   <div class="form-check">
+                       <label class="form-check-label">
+                           <input v-model="options"   type="checkbox" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option-3">
+                           Option three is disabled
+                       </label>
+                   </div>
+               </fieldset>
+               <p> You selected {{options.join(', ')}} </p>
+
+           </form>
+
+
+       </div>
+
+    </div>
+
+
+
+ <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+ <script>
+
+     let vm = new Vue({
+
+         el: '#app',
+         data: {
+             options: [],
+             message: ''
+
+         }
+
+     })
+
 </script>
 
-้  </body>
+
+
+</body>
 </html>
