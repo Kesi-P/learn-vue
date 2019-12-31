@@ -2,10 +2,10 @@
 <html lang="en" dir="ltr">
 <!-- call view model -->
 <div class="app">
-  <h1>{{ message }}</h1>
-  <h1>{{ number + 10 }}</h1>
-  <h1>{{ isActive ? 'isActive':'notActive'}}</h1>
-  <h1>{{ message.split('').reverse('').join('') }}</h1>
+  <!-- v-bind for changing the value ex:data="30" -->
+ <a v-bind:href="url">{{url}}</a>
+ <!-- another way to do v-bind -->
+ <h1 :data="dynamicId">{{ dynamicId }}</h1>
 </div>
 
 <!-- development version, includes helpful console warnings -->
@@ -18,9 +18,8 @@
      el:'.app',
      <!-- opject properties -->
      data:{
-         message:'Hello',
-         number: 10,
-         isActive: true
+         url:'https://google.com',
+         dynamicId:30
      }
    })
 </script>
