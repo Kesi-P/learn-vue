@@ -11,9 +11,7 @@
 <!-- call view model -->
 <div class="app">
 
-  <ul>
-    <li v-for="post in posts" :key="post.id">{{ post.title }}</li>
-  </ul>
+  <h1>{{ reverseMessage }}</h1>
 
 </div>
 
@@ -26,15 +24,12 @@
 
      el:'.app',
      data:{
-      posts: [
-      {id:1, title:'Pomgtai', body:'bodyslam'},
-      {id:2, title:'Pomgtai2', body:'bodyslam'},
-      {id:3, title:'Pomgtai3', body:'bodyslam'},
-      {id:4, title:'Pomgtai4', body:'bodyslam'},
-      {id:5, title:'Pomgtai5', body:'bodyslam'}
-      ]
-
-
+        message: 'Sus1'
+     },
+     computed:{
+       reverseMessage(){
+         return this.message.split('').reverse('').join('');
+       }
      }
    })
 </script>
