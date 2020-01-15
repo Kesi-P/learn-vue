@@ -10,11 +10,12 @@
 <html lang="en" dir="ltr">
 <!-- call view model -->
 <div class="app">
-  <button @click="increaseFont">Increase</button>
-  <!-- javascript properties -->
-  <div :style= "{color:'red',fontSize:fontSize + 'px'}">
-    {{ message }}
+
+  <div v-if="isActive"> {{ message }}  </div>
+  <div v-else-if="message === 'Kuuang'">
+    Hi sus
   </div>
+  <div v-else>No User sus </div>
 
 </div>
 
@@ -27,15 +28,10 @@
 
      el:'.app',
      data:{
+        isActive: false,
+         message: 'Kuuang',
 
-         message: 'าำหรืำำ', ;
-         fontSize:50,
 
-     },
-     methods:{
-       increaseFont(){
-         this.fontSize++;
-       }
      }
    })
 </script>
