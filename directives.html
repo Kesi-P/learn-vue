@@ -11,7 +11,7 @@
 <!-- call view model -->
 <div class="app">
 
-  <h1>{{ reverseMessage }}</h1>
+  <h1>Gu {{ isActive === 'active' ? 'is active' : 'not active' }}</h1>
 
 </div>
 
@@ -20,15 +20,15 @@
 
 <!--binding js with html-->
 <script>
-   new Vue({
+   let vm = new Vue({
 
      el:'.app',
      data:{
-        message: 'Sus1'
+        isActive: 'not active'
      },
-     computed:{
-       reverseMessage(){
-         return this.message.split('').reverse('').join('');
+     watch:{
+       isActive: function(){
+         console.log('Sending sus');
        }
      }
    })
