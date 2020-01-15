@@ -1,14 +1,18 @@
 <!DOCTYPE html>
+<style>
+  .active{
+    color: green;
+  }
+  .notactive{
+    color:red;
+  }
+</style>
 <html lang="en" dir="ltr">
 <!-- call view model -->
 <div class="app">
   <!-- javascript properties -->
-  <div :style= "{color:'red',fontSize:fontSize + 'px'}">
-    {{ message }}
-  </div>
-  <div :style="styleObject">
-    {{ message }}
-  </div>
+  <h1 class="static" :class="{active: isActive, 'notactive' : !isActive}">{{ message}}</h1>
+  <h1 :class= "[isActive? 'active':'notactive']"> {{name}}</h1>
 </div>
 
 <!-- development version, includes helpful console warnings -->
@@ -20,14 +24,10 @@
 
      el:'.app',
      data:{
-         number: 10,
-         url: 'https://google.com',
-         message: 'Hello',
-         fontSize:50,
-         styleObject:{
-           color: 'blue',
-           fontSize: '100px'
-         }
+        isActive: false,
+         message: 'Aisus',
+         name:'Aihere'
+
      }
    })
 </script>
