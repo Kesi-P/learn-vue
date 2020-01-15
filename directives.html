@@ -10,9 +10,12 @@
 <html lang="en" dir="ltr">
 <!-- call view model -->
 <div class="app">
+  <button @click="increaseFont">Increase</button>
   <!-- javascript properties -->
-  <h1 class="static" :class="{active: isActive, 'notactive' : !isActive}">{{ message}}</h1>
-  <h1 :class= "[isActive? 'active':'notactive']"> {{name}}</h1>
+  <div :style= "{color:'red',fontSize:fontSize + 'px'}">
+    {{ message }}
+  </div>
+
 </div>
 
 <!-- development version, includes helpful console warnings -->
@@ -24,10 +27,15 @@
 
      el:'.app',
      data:{
-        isActive: false,
-         message: 'Aisus',
-         name:'Aihere'
 
+         message: 'าำหรืำำ', ;
+         fontSize:50,
+
+     },
+     methods:{
+       increaseFont(){
+         this.fontSize++;
+       }
      }
    })
 </script>
