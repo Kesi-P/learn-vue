@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- call view model -->
+<div class="app">{{ message }}
+
+<a :href="url">{{url}}</a>
+<h1 @click="number++">{{number}}</h1>
+<form class="" @submit.prevent="number++">
+  <button type="sumnit" > SUBMIT</button>
+
+</form>
+</div>
+
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<!--binding js with html-->
+<script>
+   new Vue({
+
+     el:'.app',
+     data:{
+         number: 10,
+         url: 'https://google.com',
+         message: 'Hello'
+     }
+   })
+</script>
