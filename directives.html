@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
-<html lang="en" dir="ltr">
 <!-- call view model -->
 <div class="app">
-  <posts></posts>
+  <div id="components-demo">
+  <button-counter></button-counter>
+</div>
 
 </div>
 
@@ -13,19 +14,19 @@
 <!--binding js with html-->
 <script>
 
-  Vue.component('posts', {
-    template: '<h1>Helloss</h1>'
-  })
-   let vm = new Vue({
+Vue.component('button-counter', {
+data: function () {
+  return {
+    count: 0
+  }
+},
+template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+})
+
+
+   new Vue({
 
      el:'.app',
-     data:{
-        isActive: 'active'
-     },
-     watch:{
-       isActive: function(){
-         console.log('Sending sus');
-       }
-     }
+
    })
 </script>
